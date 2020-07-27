@@ -94,13 +94,6 @@ function addRows(){
     cell3.innerHTML = email;
     cell4.innerHTML = number;
     cell5.innerHTML = address;
-
-    fNameArr[x] = fName;
-    lNameArr[x] = lName;
-    emailArr[x] = email;
-    numberArr[x] = number;
-    addressArr[x] = address;
-    x++;
         
     table.appendChild(row);
     alert("Registered Successfully!!!");
