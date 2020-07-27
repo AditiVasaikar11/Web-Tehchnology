@@ -63,9 +63,19 @@ function addRows(){
     var email = document.getElementById('emailId').value;
     var number = document.getElementById('mobileNumber').value;
     var address = document.getElementById('address').value;
+    var gender=document.querySelectorAll('input[type="radio"]');
+    var events=document.querySelectorAll('input[type="checkbox"]');
 
     var table = document.getElementById("registrantList");
     
+    let selectedValue;
+         for (const gen of gender) {
+             if (gen.checked) {
+               selectedValue = gen.id;
+             break
+        }
+     }
+
     if(fName.length<3)
       alert("Enter Valid First Name...!!!");
     else if (lName.length<3) {
@@ -89,11 +99,15 @@ function addRows(){
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
+    var cell6=  row.insertCell(5);
     cell1.innerHTML = fName;
     cell2.innerHTML = lName;
     cell3.innerHTML = email;
     cell4.innerHTML = number;
     cell5.innerHTML = address;
+    cell6.innerHTML=selectedValue;
+
+    
         
     table.appendChild(row);
     alert("Registered Successfully!!!");
