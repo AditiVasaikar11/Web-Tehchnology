@@ -65,6 +65,9 @@ body{
 h2{
 	text-align: center;
 }
+
+
+
 input[type=text],input[type=password]{
 	width: 100%;
 	box-sizing: border-box;
@@ -89,9 +92,6 @@ input[type=checkbox]{
 	width: auto;
 	outline: none;
 	border: none;
-	margin-top: 20px;
-}
-input[type=select]{
 	margin-top: 20px;
 }
 
