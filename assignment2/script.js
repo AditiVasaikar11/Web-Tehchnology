@@ -5,6 +5,9 @@ document.querySelector('#emailId').addEventListener('keypress',getData);
 document.querySelector('#emailId').addEventListener('keypress',ValidateEmail);
 document.querySelector('#mobileNumber').addEventListener('keypress',getData);
 document.querySelector('#address').addEventListener('keypress',getData);
+document.querySelector("#FirstName").addEventListener('keydown',validateName);
+document.querySelector("#LastName").addEventListener('keydown',validateName);
+
 
 let numberArr = [];
 let emailArr = [];
@@ -121,4 +124,46 @@ function addRows(){
       document.getElementById('address').value = '';
     }
 }
+
+
+function validateName(e){
+
+if (e.ctrlKey || e.altKey) {
+    
+      e.preventDefault();
+      
+    } else {
+    
+      var key = e.keyCode;
+      
+      if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+      
+        e.preventDefault();
+        
+      }
+
+    }
+}
+
+
+//validate email address. Reference email - abc@gmail.com
+function ValidateEmail() {
+      var email = document.getElementById("emailId").value;
+      var expr = /^[ [\w\.=-]+@([a-zA-Z]{2,4})+\.([a-zA-Z]{2,4})(\]?){2,3}$/;
+      if (!expr.test(email)) {
+        alert("Invalid email address.");
+        document.getElementById("emailId").value = '';
+  }
+}
+
+function validate(evt) {
+  var key = evt.keyCode;
+  key = String.fromCharCode(key);
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    evt.returnValue = false;
+  }
+}
+
+
 
